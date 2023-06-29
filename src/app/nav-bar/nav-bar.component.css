@@ -1,0 +1,17 @@
+.nav-link:hover{
+  background-color: #f7ce81;
+  border-radius: 10px;
+  color: white;
+
+}
+.navbar-brand{
+  padding: 10px;
+  background-color: #f7ce81;
+  border-radius: 10px;
+}
+.navbar-brand:hover{
+  background-color: #fafafa;
+  border-radius: 10px;
+  color:#f7ce81 ;
+  border:#f7ce81 solid 2px ;
+}
