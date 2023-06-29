@@ -12,7 +12,7 @@
 }
 
 .test{
-
+  width: 100%;
   animation-name: example;
   animation-duration: 4s;
   animation-delay: 1s;
