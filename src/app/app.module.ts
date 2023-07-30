@@ -9,6 +9,8 @@ import { CategoriesSectionComponent } from './categories-section/categories-sect
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { TopVenteSectionComponent } from './top-vente-section/top-vente-section.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShowProductComponent } from './show-product/show-product.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FooterComponent } from './footer/footer.component';
     CategoriesSectionComponent,
     HeaderSectionComponent,
     TopVenteSectionComponent,
-    FooterComponent
+    FooterComponent,
+    ShowProductComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
