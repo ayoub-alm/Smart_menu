@@ -7,3 +7,14 @@
   scale: 1.1;
 }
 
+.title-text{
+  color:rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px #090909be;
+  font-weight: bold;
+}
+.card-container{
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}

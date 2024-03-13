@@ -12,15 +12,15 @@ export class ProductsServices{
 
 
  /**
-  * This function allows us to get a product by ID 
-  * @param id This id of products 
+  * This function allows us to get a product by ID
+  * @param id This id of products
   * @returns ProductModel
   */
   public getProduct(id: number): Observable<ProductModel> {
     return this.http.get<ProductModel>(`http://localhost:8080/products/${id}`).pipe(
       map(product =>
          new ProductModel(product.getId, product.name, product.img, product.price, product.description, product.sku)
-      ) 
+      )
     );
   }
 
@@ -31,16 +31,16 @@ export class ProductsServices{
   public getProducts(): Observable<ProductModel[]> {
     return this.http.get<ProductModel[]>(`http://localhost:8080/products`).pipe(
       map(products => products.map(product => new ProductModel(
-        product.getId, 
-        product.name, 
-        product.img, 
-        product.price, 
-        product.description, 
+        product.getId,
+        product.name,
+        product.img,
+        product.price,
+        product.description,
         product.sku
       )))
     );
   }
-  
+
 /**
  * This function allows us to create new product
  * @param product product to save
@@ -49,11 +49,11 @@ export class ProductsServices{
   public saveProduct(product: ProductModel): Observable<ProductModel> {
     return this.http.post<ProductModel>(`http://localhost:8080/products`, product).pipe(
       map(product =>  new ProductModel(
-        product.getId, 
-        product.name, 
-        product.img, 
-        product.price, 
-        product.description, 
+        product.getId,
+        product.name,
+        product.img,
+        product.price,
+        product.description,
         product.sku
       ))
     );
@@ -61,13 +61,31 @@ export class ProductsServices{
 /**
  * this function allow us to delele product by id
  * @param id if of products
- * @returns 
+ * @returns
  */
-  public delteProduct(id: number): Observable<boolean> {
+  public deleteProduct(id: number): Observable<boolean> {
     return this.http.delete<boolean>(`http://localhost:8080/products/${id}`, { observe: 'response' })
     .pipe(
       map(response => response.ok) // Extracting the boolean value based on response status
     );
   }
 
+
+
+  /**
+   * This function allows us to get a list of products by category id
+   * @returns List of products
+   */
+  public getProductsByCategoryRef(category_ref : string): Observable<ProductModel[]> {
+    return this.http.get<ProductModel[]>(`http://localhost:8080/products/category/${category_ref}`).pipe(
+      map(products => products.map(product => new ProductModel(
+        product.getId,
+        product.name,
+        product.img,
+        product.price,
+        product.description,
+        product.sku
+      )))
+    );
+  }
 }
