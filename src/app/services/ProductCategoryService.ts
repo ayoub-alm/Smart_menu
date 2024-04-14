@@ -17,7 +17,7 @@ export class ProductCategoryService {
   /**
    * this function allows to get all categories of products
    */
-  public getProducts(): Observable<ProductCategoryModel[]> {
+  public getProductsCategories(): Observable<ProductCategoryModel[]> {
     return this.http.get<ProductCategoryModel[]>(`http://localhost:8080/categories`).pipe(
       map(products => products.map(product => new ProductCategoryModel(
         product.id,

@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">List of products</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/admin/products/create">Add </button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" da  ta-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--<h2>Section title</h2>-->
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+    <tr>
+      <th></th>
+      <th scope="col">Ref</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Status</th>
+      <th scope="col">Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of listOfProduct | async">
+      <td class=" text-center">
+        <input [value]="product.id" type="checkbox" class="form-check-inline text-center">
+      </td>
+      <td><a href="javascritp:;">{{product.ref}}</a></td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}} DH</td>
+      <td [class]="product.state == true ? 'text-success' : 'text-danger'">{{product.state == true ? "Active" : "UnActive"}}</td>
+      <td>{{getCategory(product.categoryId)}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

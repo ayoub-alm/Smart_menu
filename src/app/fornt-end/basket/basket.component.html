@@ -1,0 +1,25 @@
+
+
+<div class="offcanvas offcanvas-start rounded" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header border border-warning glass-orang rounded">
+    <h3 class="offcanvas-title" id="offcanvasExampleLabel">Basket</h3>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="list-group" *ngFor="let product of products | async ">
+      <div class="card mb-2" >
+        <div class="row g-0">
+          <div class="col-4 p-2">
+            <img src="https://modpizza.com/wp-content/uploads/2021/12/Website-Pizzas-MadDog-TEST.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title bolder">{{product.name}}</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

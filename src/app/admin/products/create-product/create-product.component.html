@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2">Create New Product</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group me-2">
+      <button type="button" class="btn btn-sm btn-outline-secondary" routerLink="/admin/products/create">Add </button>
+      <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" da  ta-bs-toggle="dropdown" aria-expanded="false">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3 mb-3 px-lg-5">
+  <form class="row g-3" [formGroup]="creatProductFormGroup">
+    <div class="col-md-6">
+      <label for="name" class="form-label" >Name</label>
+      <input type="text" class="form-control" id="name"  maxlength="255" formControlName="name">
+    </div>
+    <div class="col-md-6">
+      <label for="ref" class="form-label" >Ref</label>
+      <input type="text" class="form-control" id="ref" formControlName="ref">
+    </div>
+    <div class="col-lg-4">
+      <label for="inputAddress" class="form-label">SKU</label>
+      <input type="text" class="form-control" id="inputAddress" formControlName="sku" >
+    </div>
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" disabled="true" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+      <label for="category" class="form-label">Category</label>
+      <select id="category" class="form-select" formControlName="category" >
+        <ng-container *ngFor="let category of productCategories | async">
+          <option [value]="category.id" ><img  [src]="category.icon" class="img-fluid" />{{category.name}}</option>
+        </ng-container>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="price" step="0.1" formControlName="price">
+    </div>
+    <div class="col-md-4">
+      <label for="img" class="form-label">Images</label>
+      <input type="file" multiple class="form-control" id="img" formControlName="img" >
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Description</label>
+      <input type="text" class="form-control" id="inputAddress2" formControlName="description">
+    </div>
+
+    <div class="col-12">
+      <button (click)="onSubmit()" class="btn btn-primary">Add</button>
+    </div>
+  </form>
+
+</div>
