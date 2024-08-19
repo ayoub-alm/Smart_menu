@@ -1,28 +1,30 @@
-<nav class="navbar navbar-expand-lg fixed-top fw-blod"  style="border-radius: 5px;background-color: #ffffff;">
+<nav class="navbar glass navbar-expand-lg fixed-top fw-blod mb-5"  >
   <div class="container-fluid">
-     <a class="navbar-brand text-white " href="" routerLink="/" > Fantasy food</a>
+    <a class="navbar-brand" href="#" style="color: #d7a734;">
+      <img src="/assets/mamito_logo-png.png" alt="logo" width="50" height="40" class="img-fluid" >
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']">Home</a>
+          <a class="nav-link fw-bold" [routerLink]="['']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/categories']">Categories</a>
+          <a class="nav-link fw-bold" href="/#categories">Categories</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"[routerLink]="['/products']">Top Selle's</a>
+          <a class="nav-link fw-bold"  href="/#top-selles ">Top Selle's</a>
         </li>
       </ul>
+
       <form class="d-flex justify-content-around" role="search">
-        {{productsInBasketCount.getValue()}}
-         <div data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="margin-right: 15px" class="mt-2">
-           <mat-icon style="color: darkslategrey;transform: scale(1.3)">shopping_cart</mat-icon>
-        </div>
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button mat-stroked-button color="red">Search</button>
+        <button mat-stroked-button class="mx-2 fw-bold" color="red">Acount</button>
+         <div mat-stroked-button data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="btn border-2" >
+          <mat-icon style="transform: scale(1.2)">shopping_cart</mat-icon>
+          <!-- {{productsInBasketCount.getValue()}} -->
+         </div>
       </form>
     </div>
   </div>

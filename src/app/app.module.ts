@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -16,22 +16,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 // Form Modules
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
+import { BasketComponent } from './fornt-end/basket/basket.component';
+import { CategoriesSectionComponent } from './fornt-end/categories-section/categories-section.component';
 import { FooterComponent } from './fornt-end/footer/footer.component';
+import { HeaderSectionComponent } from './fornt-end/header-section/header-section.component';
 import { HomePageComponent } from './fornt-end/home-page/home-page.component';
 import { NavBarComponent } from './fornt-end/nav-bar/nav-bar.component';
 import { ProductDialogComponent } from './fornt-end/product-dialog/product-dialog.component';
 import { ShowProductComponent } from './fornt-end/show-product/show-product.component';
-import { BasketComponent } from './fornt-end/basket/basket.component';
-import { CategoriesSectionComponent } from './fornt-end/categories-section/categories-section.component';
-import { HeaderSectionComponent } from './fornt-end/header-section/header-section.component';
 import { PartneresComponent } from './fornt-end/partneres/partneres.component';
-import { HttpClientModule } from '@angular/common/http';
-
-const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'categories', component: ShowProductComponent },
-  { path: 'products', component: ShowProductComponent },
-];
+import { AppRoutingModule } from './app-routing.module';
+import { KioskComponent } from './fornt-end/kiosk/kiosk.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +41,16 @@ const routes: Routes = [
     FooterComponent,
     CategoriesSectionComponent,
     HeaderSectionComponent,
-    PartneresComponent
+    PartneresComponent,
+    KioskComponent
   ],
   imports: [
+    RouterModule,
+    RouterOutlet,
     HttpClientModule,
+    AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     MatCardModule,
     MatCheckboxModule,

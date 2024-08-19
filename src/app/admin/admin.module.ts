@@ -4,7 +4,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {AdminIndexComponent} from "./admin-index/admin-index.component";
 import { CreateProductComponent } from './products/create-product/create-product.component';
 import { ShowAllProductComponent } from './products/show-all-product/show-all-product.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule, RouterOutlet} from "@angular/router";
 import {ReactiveFormsModule} from "@angular/forms";
 
 
@@ -14,9 +14,10 @@ import {ReactiveFormsModule} from "@angular/forms";
   declarations: [
     CreateProductComponent,
     ShowAllProductComponent,
-    AdminIndexComponent
   ],
     imports: [
+   
+        RouterOutlet,
         CommonModule,
         MatIconModule,
         RouterModule,

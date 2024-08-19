@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {OrderDto} from "../Dtos/OrderDto";
-import {ProductModel} from "../models/product.model";
-import {OrderModel} from "../models/order.model";
+
 import {OrderType} from "../enums/OrderType ";
 import {OrderState} from "../enums/OrderState";
 
@@ -13,10 +12,16 @@ import {OrderState} from "../enums/OrderState";
 export class OrderService {
   private apiUrl = 'http://localhost:8080/';
   public order: BehaviorSubject<OrderDto>;
+
+
+  
   constructor(private http: HttpClient) {
     this.order =  new BehaviorSubject<OrderDto>(new OrderDto(0,OrderType.ONLINE,OrderState.PENDING,1,new Date(),[],0 ))
 
   }
+
+
+  
 
   // Fetch all orders
   getOrders(): Observable<OrderDto[]> {

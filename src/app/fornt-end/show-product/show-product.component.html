@@ -1,7 +1,8 @@
-<div class="container">
-  <br><br><br>
-  <div class="row">
-      <mat-card  class="col-lg-6 d-flex justify-content-center border border-warning-subtle border-1
+<app-nav-bar></app-nav-bar>
+<div class="container" id="top">
+  <br><br><br><br>
+  <div class="row p-lg-3">
+      <mat-card  class="col-lg-6 d-flex justify-content-center border border-dark   border-1
         rounded-3 text-center ">
         <mat-card-content>
           <img src="https://modpizza.com/wp-content/uploads/2021/12/Website-CYO.png" alt="" class="img-fluid">
@@ -10,7 +11,7 @@
     <div class="col-lg-6">
       <div class="row">
         <div class="col-lg-12 p-lg-5">
-          <p class="display-4" style="color:rgba(255, 166, 0, 0.4);">Product name</p>
+          <p class="display-4 text-dark" >Product name</p>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore iusto placeat cumque veritatis laboriosam, incidunt ducimus libero laudantium omnis fugiat molestiae dolore? Quasi fugit rerum enim culpa? Ducimus, quia neque!
           </p>
@@ -49,7 +50,7 @@
               <button mat-raised-button class="btn btn-warning" type="button"  color="accent">Add to Basket</button>
             </a>
             <a (click)="onAddToBasket(1)">
-              <button mat-raised-button class="btn btn-warning" type="button" color="primary">Terminer</button>
+              <button routerLink="/" mat-raised-button class="btn btn-warning" type="button" color="primary">Home</button>
             </a>
           </div>
         </div>

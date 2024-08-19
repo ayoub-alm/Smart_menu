@@ -4,6 +4,7 @@ import {FooterComponent} from "../footer/footer.component";
 
 @Component({
   selector: 'app-show-product',
+
   templateUrl: './show-product.component.html',
   styleUrls: ['./show-product.component.css']
 })

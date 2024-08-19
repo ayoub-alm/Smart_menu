@@ -22,34 +22,26 @@ import { CategoriesSectionComponent } from './categories-section/categories-sect
 import { HeaderSectionComponent } from './header-section/header-section.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShowProductComponent } from './show-product/show-product.component';
-import { PartneresComponent } from './partneres/partneres.component';
 import { AdminIndexComponent } from '../admin/admin-index/admin-index.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { TopSelleComponent } from './top-selle/top-selle.component';
+
 import { BasketComponent } from './basket/basket.component';
-import { SellerLoginComponent } from './seller-login/seller-login.component';
 import { SellerRegisterComponent } from './seller-register/seller-register.component';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ShowAllProductComponent } from '../admin/products/show-all-product/show-all-product.component';
 
 
 @NgModule({
     declarations: [
         ProductCardComponent,
         NavBarComponent,
-        CategoriesSectionComponent,
         HeaderSectionComponent,
         FooterComponent,
-        ShowProductComponent,
-        PartneresComponent,
         AdminIndexComponent,
-        HomePageComponent,
-        TopSelleComponent,
         BasketComponent,
-        SellerLoginComponent,
         SellerRegisterComponent,
         ProductDialogComponent,
-
     ],
     imports: [
         RouterModule,
