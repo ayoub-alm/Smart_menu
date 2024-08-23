@@ -9,8 +9,10 @@
     <!-- <div class="col-12"> -->
       <div class="d-flex justify-content-around row "  style="overflow-x: auto; white-space: nowrap;overflow-y: visible;">
        <div class="card-container">
-        <div *ngFor="let category of productCategories | async" class="col-3 mx-2 p-1  shadow-sm rounded-4 border border-dark border-1 d-flex justify-content-around"> 
-          <li class=" rounded-4  d-flex justify-content-around" (click)="getProductsByCategory(category.ref)">
+        <div *ngFor="let category of productCategories | async"
+        (click)="getProductsByCategory(category.ref)"
+         class="col-3 mx-2 p-1  shadow-sm rounded-4 border border-dark border-1 d-flex justify-content-around"> 
+          <li class=" rounded-4  d-flex justify-content-around" >
             <div class="mx-3">
             <img matChipAvatar [src]="category.icon" alt="" class="img-fluid " width="25px" />
             </div>
