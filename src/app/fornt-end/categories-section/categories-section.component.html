@@ -29,11 +29,11 @@
           <div *ngFor="let product of selectedProducts | async" class="col-lg-3 p-2" >
             <mat-card  class="p-3 card " >
               <span class="badge  bg-dark col-6">{{product.seller.sellerName}}</span>
-              <a href="/products#top">
+              <a href="/product#top">
                 <img (click)="showProductDialog(product.ref)" class="card-img-top" src="https://modpizza.com/wp-content/uploads/2021/12/Website-Pizzas-MadDog-TEST.png" alt="Photo of a Shiba Inu">
               </a>
-              <p class="card-title mt-2">{{product.name}}
-              </p>
+              <h4 class=" mt-2 fw-blod"><strong>{{product.name}}</strong>
+              </h4>
               <mat-card-actions class="d-flex justify-content-around">
                 <a class="nav-link"  mat-stroked-button (click)="addToBasket(product)">
                     <mat-icon class="border-0 border text-center" style="color:#f3af0f;transform:scale(1.2)" >shopping_cart</mat-icon>
@@ -56,11 +56,11 @@
      <div class="col-lg-12  " >
       <div class="row p-3" style="overflow-x: auto; white-space: nowrap;overflow-y: visible;">
         <div class="card-container">
-          <div *ngFor="let product of selectedProducts | async" class="col-lg-2 p-2">
+          <div *ngFor="let product of allProducts | async" class="col-lg-2 p-2">
             <div  class="p-3 glass card shadow-sm border border-warning border-2" >
               <span class="badge  bg-dark col-6">{{product.seller.sellerName}}</span>
               <a href="/product">
-                <img (click)="showProductDialog(product.ref)" class="card-img-top" src="https://modpizza.com/wp-content/uploads/2021/12/Website-Pizzas-MadDog-TEST.png" alt="Photo of a Shiba Inu">
+                <img class="card-img-top" src="https://modpizza.com/wp-content/uploads/2021/12/Website-Pizzas-MadDog-TEST.png" alt="Photo of a Shiba Inu">
               </a>
               <p class="card-title mt-2">{{product.name}}
               </p>

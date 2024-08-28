@@ -1,6 +1,7 @@
 import {OrderType} from "../enums/OrderType ";
 import {OrderState} from "../enums/OrderState";
 import {ProductModel} from "../models/product.model";
+import { ProductInOrderDto } from "./product-in-order.dto";
 export class OrderDto {
   constructor(
     public orderId: number,
@@ -8,7 +9,7 @@ export class OrderDto {
     private orderState: OrderState,
     private userId: number,
     private orderDate: Date,
-    public products: ProductModel[],
+    public products: ProductInOrderDto[],
     private totalAmount: number
   ) {}
 
@@ -16,7 +17,7 @@ export class OrderDto {
     return this.orderId;
   }
 
- get getProducts(): ProductModel[]{
+ get getProducts(): ProductInOrderDto[]{
     return this.products;
  }
 }

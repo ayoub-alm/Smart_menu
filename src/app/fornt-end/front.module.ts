@@ -39,7 +39,6 @@ import { ShowAllProductComponent } from '../admin/products/show-all-product/show
         HeaderSectionComponent,
         FooterComponent,
         AdminIndexComponent,
-        BasketComponent,
         SellerRegisterComponent,
         ProductDialogComponent,
     ],
@@ -60,7 +59,7 @@ import { ShowAllProductComponent } from '../admin/products/show-all-product/show
     ],
     providers: [],
     exports: [
-        BasketComponent
+        
     ],
     bootstrap: [HomePageComponent]
 })

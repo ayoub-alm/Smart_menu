@@ -5,23 +5,27 @@ import {OrderDto} from "../Dtos/OrderDto";
 
 import {OrderType} from "../enums/OrderType ";
 import {OrderState} from "../enums/OrderState";
+import { LocalStorageService } from './local-storage.service';
+import { ProductModel } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
   private apiUrl = 'http://localhost:8080/';
+
   public order: BehaviorSubject<OrderDto>;
 
 
   
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService) {
     this.order =  new BehaviorSubject<OrderDto>(new OrderDto(0,OrderType.ONLINE,OrderState.PENDING,1,new Date(),[],0 ))
-
   }
 
 
-  
+  addToOrder(product: ProductModel){
+    this.localStorageService.setItem('order',this.order.getValue())
+  }
 
   // Fetch all orders
   getOrders(): Observable<OrderDto[]> {

@@ -1,6 +1,6 @@
 
 
-<div class="offcanvas offcanvas-start rounded" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-end rounded" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header border bg-dark rounded">
     <h3 class="offcanvas-title text-white fw-bold" id="offcanvasExampleLabel">Basket</h3>
     <button  style="color: white !important;" type="button" class="bg-white btn-close btn btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -14,12 +14,22 @@
           </div>
           <div class="col-8">
             <div class="card-body">
-              <h5 class="card-title bolder">{{product.name}}</h5>
+              <h3 class="card-title bolder fw-bold">{{product.product.name}}</h3>
+              <h5 class="card-title bolder">Quantity :<strong class="text-dark"> {{product.quantity}}</strong></h5>
+              <h5 class="card-title bolder">Price :{{product.product.price}}</h5>
               <p class="card-text"></p>
             </div>
           </div>
         </div>
       </div>
     </ul>
+
+    <div style="position:fixed;bottom: 5px;" class="mb-2 container">
+      <ul class="list-group row ">
+        <li class="list-group-item col-10">
+         <strong> Total   </strong> : {{totalAmount}}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

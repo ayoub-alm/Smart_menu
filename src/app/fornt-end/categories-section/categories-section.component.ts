@@ -7,6 +7,7 @@ import {ProductsServices} from "../../services/products.services";
 import {OrderService} from "../../services/OrderService";
 import {MatDialog} from "@angular/material/dialog";
 import {ProductDialogComponent} from "../product-dialog/product-dialog.component";
+import { ProductInOrderDto } from 'src/app/Dtos/product-in-order.dto';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class CategoriesSectionComponent implements OnInit , OnDestroy {
     subscriptions: Subscription[] = [];
     productCategories: BehaviorSubject<ProductCategory[]>;
     selectedProducts: BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
+    allProducts: BehaviorSubject<ProductModel[]> = new BehaviorSubject<ProductModel[]>([]);
 
     constructor(private categoryService: ProductCategoryService,
                 private productService: ProductsServices,
@@ -35,7 +37,10 @@ export class CategoriesSectionComponent implements OnInit , OnDestroy {
 
       this.subscriptions.push(
       this.productService.getProducts().pipe().subscribe(
-        products => this.selectedProducts.next(products)
+        products => {
+          this.selectedProducts.next(products)
+          this.allProducts.next(products)
+        }
       ));
   }
 
@@ -51,7 +56,23 @@ export class CategoriesSectionComponent implements OnInit , OnDestroy {
   }
 
   addToBasket(product: ProductModel) {
-    this.orderService.order.getValue().products.push(product);
+    // Get current basket products
+    let productsInBasket = this.orderService.order.getValue().products;
+
+    // Check if the product already exists in the basket
+    let existingProduct = productsInBasket.find(prd => prd.product === product);
+    console.log(existingProduct);
+    
+    if (existingProduct != undefined) {
+      // If it exists, update the quantity
+      existingProduct.quantity += 1;
+    } else {
+      // If it doesn't exist, add it as a new entry
+      productsInBasket.push(new ProductInOrderDto(product, 1));
+    }
+    // Update the order service with the new products list
+    this.orderService.order.getValue().products = productsInBasket;
+    console.log('Product added to basket:', productsInBasket);
   }
 
   showProductDialog(product_ref: string): void {
